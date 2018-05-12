@@ -6,14 +6,13 @@ class App extends Component {
     super();
     this.state = {
       counter: 0,
-      content:""
     }
     this.handleChange = this.handleChange.bind(this)
   }
   render() {
     return (
       <div className="container">
-        <textarea rows="3" value={this.state.content} onChange={this.handleChange} ></textarea>
+        <textarea rows="3" onChange={this.handleChange} ></textarea>
         <div className="counter">{this.state.counter}</div>
       </div>
     );
@@ -21,8 +20,7 @@ class App extends Component {
 
   handleChange(event){
     this.setState({
-      content: event.target.value,
-      counter: this.state.content.length
+      counter: event.target.value.length
     })
   }
 }
